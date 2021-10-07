@@ -8,16 +8,18 @@
 <form>
     <label for="pass">Enter the secret phrase</label>
     <input type ="password" id="pass" name="password"  value="Let me in"> <br>
-<br>
+    <br>
     <label for="pwd">Enter a phrase </label>
     <input type ="text" id="check"  autofocus> <br>
-<br>
+    <br>
     <input type="button" onclick="processPhrase()" value="Check the phrase">
 </form>
 
 
 <p id="result">This text will be replaced </p>
-
+<div class="container">
+    <img id="myImg" style="width: 200px;height: 200px;" alt="Ape" onclick="newImage()" src="Ape.jpg">
+</div>
 <script> 
  let correct=0,wrong=0;
 function processPhrase(){
@@ -36,9 +38,27 @@ function processPhrase(){
        alert("Access denied")
        out.innerHTML = "Wrong Count : "+wrong
    }
-
-
- }
+}
+let usingImage = 1
+   function newImage(){
+    switch(usingImage){
+        case 1: {
+            document.getElementById("myImg").src = "Cheetah.jpg";
+            usingImage = usingImage+1
+            break;
+        }
+        case 2:{
+            document.getElementById("myImg").src = "Vulture.jpg"; 
+            usingImage = usingImage+1
+            break
+        }
+        case 3:{
+            document.getElementById("myImg").src = "Ape.jpg"; 
+            usingImage = usingImage+1
+            break
+        }  
+    }
+}
 </script>
 
 </body>
