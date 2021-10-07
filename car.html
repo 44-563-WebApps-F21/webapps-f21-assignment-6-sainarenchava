@@ -18,6 +18,15 @@
         <input type="button" onclick="orderCar()" value="Order a Car">
     </form>
     <p id="result">result</p>
+    <form>
+        <label for="property">Enter a Property </label>
+        <input type ="text" id="property" name="property" step=2 value=colour> <br>
+
+        <label for="value">Enter a value </label>
+        <input type ="text" id="value" name="value" autofocus > <br>
+
+        <input type="button" onclick="updateCar()" value="Update the car">
+    </form>
     <script>
         my_car= {};
         function orderCar() {
@@ -33,3 +42,15 @@
             out.innerHTML = my_car
             my_car = JSON.parse(my_car)
         }
+        function updateCar() {
+            property = document.getElementById("property").value
+            val = document.getElementById("value").value
+            out = document.getElementById("result")
+            my_car[property] = val
+            my_car = JSON.stringify(my_car)
+            out.innerHTML = my_car
+            my_car = JSON.parse(my_car)
+        }
+    </script>
+    </body>
+    </html>
