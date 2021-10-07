@@ -27,17 +27,26 @@ function processPhrase(){
    var check = document.getElementById("check").value
    result.style.color = "red"
    out = document.getElementById("result")
-   if(secret == check)
-   {
-       correct = correct+1;
-       alert("Access allowed")
-       out.innerHTML = "Correct Count : "+correct
+   if(wrong<3){
+    if(secret == check)
+    {
+        correct = correct+1;
+        alert("Access allowed")
+        out.innerHTML = "Correct Count : "+correct
+    }
+    else{
+        wrong = wrong+1;
+        alert("Access denied")
+        out.innerHTML = "Wrong Count : "+wrong
+    }
    }
    else{
-       wrong = wrong+1;
-       alert("Access denied")
-       out.innerHTML = "Wrong Count : "+wrong
+    document.getElementById("button").onclick = access()
    }
+  
+}
+function access(){
+    alert("Account Locked")
 }
 let usingImage = 1
    function newImage(){
@@ -60,6 +69,7 @@ let usingImage = 1
     }
 }
 </script>
+
 
 </body>
 </html>
